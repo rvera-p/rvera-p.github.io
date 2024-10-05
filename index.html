@@ -1,437 +1,428 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rafael Vera - Portafolio</title>
+<html lang="es" data-bs-theme="auto">
 
-    <!-- BOOTSTRAP -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-    <!-- JQUERY -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rafael Vera | Desarrollador Web</title>
 
-    <!-- Íconos FontAwesome -->
-    <script
-      src="https://kit.fontawesome.com/9dce4b738e.js"
-      crossorigin="anonymous"
-    ></script>
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- JS propio -->
-    <script src="assets/js/script.js"></script>
-    <!-- CSS propio -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <!-- INICIO HEADER -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div id="contenedorNavbar" class="container-fluid flex-column">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+  <!-- Íconos FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/index.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+
+  <!-- THEME BUTTON -->
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#inicio">INICIO</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#sobremi">SOBRE MI</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills">SKILLS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#curriculum">CURRICULUM</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">PORTFOLIO</a>
-            </li>
-          </ul>
-        </div>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+          aria-pressed="true">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <header>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg px-lg-5 ps-5 pe-3 fixed-top" id="navbar">
+      <a class="navbar-brand" href="#portada">ravedev</a>
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item mx-3"><a href="#sobreMi" class="nav-link">SOBRE MI</a></li>
+          <li class="nav-item mx-3"><a href="#portafolio" class="nav-link">PORTAFOLIO</a></li>
+          <li class="nav-item mx-3"><a href="#contacto" class="nav-link">CONTACTO</a></li>
+        </ul>
       </div>
     </nav>
-    <!-- FIN HEADER -->
+  </header>
 
-    <!-- INICIO SECCION INICIO -->
-    <section id="inicio" class="inicio">
-      <div class="contenido-banner">
-        <div class="contenedor-img">
-          <img src="assets/img/perfil.png" id="imgPerfil" alt="" />
-        </div>
-        <h1>Rafael Vera</h1>
-        <p>Analista Programador</p>
-        <div class="redesSociales">
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#"
-            role="button"
-            ><i class="fab fa-facebook-f fa-2x" style="color: #3b5998"></i
-          ></a>
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-instagram fa-2x" style="color: #ac2bac"></i
-          ></a>
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="https://www.linkedin.com/in/rafaelverapinto/"
-            role="button"
-            ><i
-              class="fa-brands fa-linkedin-in fa-2x"
-              style="color: #0082ca"
-            ></i
-          ></a>
-          <a
-            class="btn m-1 btn-outline-light"
-            href="https://github.com/rvera-p"
-            role="button"
-            ><i class="fab fa-github fa-2x" style="color: #333333"></i
-          ></a>
+  <main>
+    <!-- PORTADA -->
+    <div class="px-4 py-5" id="portada">
+      <div class="row flex-lg-row align-items-center p-5">
+        <div class="col-12 mt-5 ms-md-5 text-md-start text-center">
+          <h2>Hola, mi nombre es</h2>
+          <h1>Rafael Vera</h1>
+          <p>Analista Programador | Backend Developer</p>
         </div>
       </div>
-    </section>
-    <!-- FIN SECCION INICIO -->
+    </div>
 
-    <!-- INICIO SECCION SOBRE MI -->
-    <section id="sobremi" class="sobremi">
-      <div class="container p-5">
-        <h2>Sobre Mí</h2>
-        <p>
-          Hola! Soy <span>Rafael Vera</span>, con estudios de Analista
-          Programador en el Instituto Profesional Inacap. Tengo un gran interés
-          en el mundo digital, ya que este tiene gran influencia e impacto en
-          nuestras vidas, por lo que me motiva aprender sobre nuevas
-          tecnologías. Me gusta trabajar en equipo, aprender de otros, también
-          poseo facilidad de aprendizaje, adaptación y flexibilidad ante los
-          cambios
-        </p>
+    <div class="border-black border-bottom banner-portada mb-5">
+      <div class="d-flex justify-content-center">
+        <a class="text-black" href="#sobreMi"><i class="fas fa-chevron-down fa-3x"></i></a>
+      </div>
+    </div>
 
+    <!-- SOBRE MI -->
+    <div class="container p-5 d-flex align-items-center">
+      <div class="row" id="sobreMi">
+        <div class="col-12 col-lg-6 col-md-6 py-5">
+          <h2>Mi Historia</h2>
+          <p>
+            Mi nombre es Rafael Vera, soy un Analista Programador con un profundo interés en el mundo digital.
+            <br><br>
+            A lo largo de mi formación y experiencia, he desarrollado una verdadera pasión por el mundo digital y las
+            tecnologías que impactan nuestra vida diaria. He demostrado un fuerte compromiso con el aprendizaje
+            continuo, especialmente en áreas de desarrollo web y análisis de datos. Mi participación en proyectos con
+            Power BI, la automatización de procesos con Python y el desarrollo de aplicaciones a medida me ha permitido
+            no solo mejorar mis habilidades técnicas, sino también perfeccionar mi capacidad para adaptarme a los
+            constantes cambios del entorno tecnológico.
+            <br><br>
+            Mi experiencia como Desarrollador Full Stack en JavaScript y Analista de Datos refleja mi dedicación por
+            identificar problemas y ofrecer soluciones efectivas, con un enfoque en la eficiencia y la innovación.
+            Siempre he estado motivado por aprender nuevas tecnologías, como AWS, Node.js, y bases de datos como MySQL y
+            PostgreSQL, lo que me ha permitido contribuir de manera significativa en cada equipo de trabajo en el que he
+            estado.
+          </p>
+        </div>
+        <div class="col-12 col-lg-6">
+          <img src="assets/img/sobremi.svg" alt="Sobre Mi">
+        </div>
+        <div class="col-6"></div>
+      </div>
+    </div>
+
+    <div class="banner-black"></div>
+
+    <!-- SKILLS -->
+    <div class="container">
+      <div id="skills">
+        <div class="mb-3">
+          <h2 class="text-center mb-5">Mis Habilidades</h2>
+          <p>Durante mi trayectoria en el área de la informática, he desarrollado una variedad de
+            habilidades que me han
+            permitido crear aplicaciones cada vez más complejas y eficientes.</p>
+        </div>
+
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6">
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-js"></i>
+            <p class=" ms-3 mt-3">JavaScript</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-python"></i>
+            <p class=" ms-3 mt-3">Python</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fas fa-lg fa-file-excel"></i>
+            <p class=" ms-3 mt-3">VBA</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-java"></i>
+            <p class=" ms-3 mt-3">Java</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fas fa-lg fa-database"></i>
+            <p class=" ms-3 mt-3">MySQL</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fas fa-lg fa-database"></i>
+            <p class=" ms-3 mt-3">PostgreSQL</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fas fa-lg fa-database"></i>
+            <p class=" ms-3 mt-3">MongoDB</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-html5"></i>
+            <p class=" ms-3 mt-3">HTML</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-css3-alt"></i>
+            <p class=" ms-3 mt-3">CSS</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-bootstrap"></i>
+            <p class=" ms-3 mt-3">Bootstrap</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-node"></i>
+            <p class=" ms-3 mt-3">Node.js</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-react"></i>
+            <p class=" ms-3 mt-3">React</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-git"></i>
+            <p class=" ms-3 mt-3">Git</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fas fa-lg fa-file"></i>
+            <p class=" ms-3 mt-3">Power BI</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-aws"></i>
+            <p class=" ms-3 mt-3">AWS</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-jira"></i>
+            <p class=" ms-3 mt-3">Jira</p>
+          </div>
+
+          <div class="col d-flex align-items-center">
+            <i class="fab fa-lg fa-confluence"></i>
+            <p class=" ms-3 mt-3">Confluence</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="banner-blue"></div>
+
+    <!-- EXPERIENCIA -->
+    <div class="container">
+      <div class="align-content-center" id="experiencia">
         <div class="row">
-          <div class="col-12">
-            <ul>
+          <div class="col-12 col-lg-6 p-5">
+            <h2>Mi Experiencia</h2>
+            <ul class="timeline">
               <li>
-                <span>Email</span>
-                rafael.verapinto@gmail.com
+                <b>Data & Analytics Trainee </b>
+                <b class="float-end">ARKHO</b>
+                <ul>
+                  <li>Creación de reportes interactivos y dinámicos utilizando Power BI</li>
+                  <li>Implementación de automatizaciones y desarrollo de scripts en Python para optimizar procesos de
+                    análisis de datos</li>
+                  <li>Documentación de scripts desarrollados en Python y para los informes creados en Power BI.</li>
+                </ul>
               </li>
               <li>
-                <span>Dirección</span>
-                Melipilla, Chile
+                <b>Analista Programador</b>
+                <b class="float-end">CORFO</b>
+                <ul>
+                  <li>Apoyo en la automatización de procesos mediante el uso de tecnologías de la información.</li>
+                  <li>Gestión y diseño de base de datos relacional.</li>
+                  <li>Desarrollo en VB para el diseño de aplicaciones a la medida según las necesidades de la gerencia.
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
-        </div>
-        <button>
-          Descargar CV <i class="fa-solid fa-download"></i>
-          <span class="overlay"></span>
-        </button>
-      </div>
-    </section>
-    <!-- FIN SECCION SOBRE MI -->
-
-    <!-- SECCION SKILLS -->
-    <section class="skills" id="skills">
-      <div class="container">
-        <h2>Skills</h2>
-        <div class="row">
-          <!-- Lenguajes de Programacion -->
-          <div class="col-12 col-sm-12 col-md-12 col-lg-6 my-3">
-            <h3>Lenguajes de Programacion</h3>
-            <div class="skill">
-              <span>Javascript</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>HTML & CSS</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>Java</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>Python</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>VBA</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>C#</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Base de Datos -->
-          <div class="col-12 col-sm-12 col-md-12 col-lg-6 my-3">
-            <h3>Base de Datos</h3>
-            <div class="skill">
-              <span>MySQL</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>SQLServer</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>Oracle</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>MongoDB</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>PostgreSQL</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Otras tecnologias -->
-          <div class="col-12 col-sm-12 col-md-12 col-lg-6 my-3">
-            <h3>Otras Tecnologias</h3>
-            <div class="skill">
-              <span>Git</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>AWS</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>Docker</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>NODE JS</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>Bootstrap</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Idiomas -->
-          <div class="col-12 col-sm-12 col-md-12 col-lg-6 my-3">
-            <h3>Idiomas</h3>
-            <div class="skill">
-              <span>Español</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
-            <div class="skill">
-              <span>Ingles</span>
-              <div class="barra-skill">
-                <div class="progreso"></div>
-              </div>
-            </div>
+          <div class="col-12 col-lg-6 p-5">
+            <img src="assets/img/experiencia.svg" alt="Experiencia">
           </div>
         </div>
       </div>
-    </section>
-    <!-- FIN SECCION SKILLS -->
-
-    <!-- INICIO SECCION CURRICULUM -->
-    <section id="curriculum" class="curriculum">
-      <div class="container">
-        <h2>Curriculum</h2>
-        <div class="row">
-          <div class="col-12 col-sm-10 col-md-10 col-lg-6">
-            <h3>Educación</h3>
-            <div class="item izq">
-              <h4>Analista Programador</h4>
-              <span class="subtitulo">Instituto Profesional INACAP </span>
-              <span class="fecha">2017- 2021 </span>
-              <p></p>
-              <div class="conectori">
-                <div class="circuloi"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-10 col-md-10 col-lg-6">
-            <h3>Experiencia de trabajo</h3>
-            <div class="item der">
-              <h4>Analista Programador (Practica Profesional)</h4>
-              <span class="subtitulo">CORFO</span>
-              <span class="fecha">2005 - 2008</span>
-              <p>
-                Apoyo en la automatización de procesos mediante el uso de
-                tecnologías de la información. <br />
-                Gestión y diseño de base de datos relacional. <br />
-                Desarrollo en VB para el diseño de aplicaciones a la medida
-                según las necesidades de la gerencia.
-              </p>
-              <div class="conectord">
-                <div class="circulod"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- FIN SECCION CURRICULUM -->
-
-    <!-- INICIO SECCION PORTFOLIO -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-        <h2>PORTFOLIO</h2>
-        <div class="row">
-          <div class="col-12 col-lg m-2">
-            <div class="proyecto">
-              <img src="assets/img/presupuesto_app.png" alt="" />
-              <div class="overlay">
-                <a title="Proyecto 3" href="https://github.com/rvera-p/p1_presupuesto">
-                  <h3>Presupuesto</h3>
-                  <p>JS JQuery</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg m-2">
-            <div class="proyecto">
-              <img src="assets/img/api_digimon.png" alt="" />
-              <div class="overlay">
-                <a title="Proyecto 3" href="https://github.com/rvera-p/p2_api_digimon">
-                  <h3>API DIGIMON</h3>
-                  <p>Front End</p>
-                </a>
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg m-2">
-            <div class="col ">
-            <div class="proyecto">
-              <img src="assets/img/bootcamp.png" alt="Bootcamp App" />
-              
-              <div class="overlay">
-                <a title="Proyecto 3" href="https://github.com/rvera-p/p3_bootcampApp">
-                  <h3>Bootcamp App</h3>
-                  <p>NODE Postgre Handlebars</p>
-                </a>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- FIN SECCION PORTAFOLIO -->
-
-    <!-- BOTON IR A INICIO -->
-    <div class="home-icon" id="s-icons">
-      <button class="btn btn-primary btn-home" id="btn-home">
-        <i class="fa fa-home-alt fa-2x"></i>
-      </button>
     </div>
 
-    <!-- INICIO FOOTER -->
-    <footer class="bg-dark text-center text-white">
-      <!-- Grid container -->
-      <div class="container p-4 pb-0">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-          <!-- Facebook -->
-          <a
-            data-mdb-ripple-init
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            data-mdb-ripple-color="dark"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
+    <!-- CURSOS -->
+    <div class="container">
+      <div id="cursos">
+        <h2 class="text-center mb-5">Cursos en los que he participado</h2>
+        <div id="carouselCursos" class="carousel slide mb-6" data-bs-ride="carousel">
+          <div class="row align-items-center">
+            <div class="col-1">
+              <button class="btn p-0 border-0" type="button" data-bs-target="#carouselCursos" data-bs-slide="prev">
+                <span class="fas fa-2x fa-chevron-left text-primary" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+            </div>
 
-          <!-- Instagram -->
-          <a
-            data-mdb-ripple-init
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            data-mdb-ripple-color="dark"
-            ><i class="fab fa-instagram"></i
-          ></a>
+            <div class="col-10">
+              <div class="carousel-inner" id="courses-container">
 
-          <!-- Linkedin -->
-          <a
-            data-mdb-ripple-init
-            class="btn btn-outline-light btn-floating m-1"
-            href="https://www.linkedin.com/in/rafaelverapinto/"
-            role="button"
-            data-mdb-ripple-color="dark"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <!-- Github -->
-          <a
-            data-mdb-ripple-init
-            class="btn btn-outline-light btn-floating m-1"
-            href="https://github.com/rvera-p"
-            role="button"
-            data-mdb-ripple-color="dark"
-            ><i class="fab fa-github"></i
-          ></a>
-        </section>
+              </div>
+            </div>
+
+            <div class="col-1">
+              <button class="btn p-0 border-0" type="button" data-bs-target="#carouselCursos" data-bs-slide="next">
+                <span class="fas fa-2x fa-chevron-right text-primary" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <!-- Copyright -->
-      <div id="copyright" class="text-center p-3">
-        © 2024 Copyright: Rafael Vera
+    </div>
+
+    <div class="banner-black"></div>
+
+    <!-- PORTAFOLIO -->
+    <div class="container">
+      <div id="portafolio">
+        <h2 class="text-center my-3">Portafolio</h2>
+
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 align-items-stretch" id="portfolio-container">
+          <div class="col my-2">
+            <a href="" class="card card-just-text shadow rounded-0 text-decoration-none position-relative">
+              <div class="card-body text-center p-5">
+                <h6>Título de la Card</h6>
+                <p>Descripción de la Card</p>
+              </div>
+            </a>
+          </div>
+
+
+        </div>
       </div>
-    </footer>
-    <!-- FIN FOOTER -->
-  </body>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="container d-flex justify-content-center">
+      <div class="col-12 col-lg-10" id="contacto">
+        <div class="row align-items-center rounded-3 border shadow-lg">
+          <div class="col-lg-6 p-3">
+            <h2>Contacto</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus, explicabo sint nostrum
+              dolorum
+              consectetur? Facilis officia consequatur, suscipit aperiam doloribus ut quaerat! Praesentium explicabo,
+              accusantium culpa error natus at.</p>
+
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="ms-3">
+                <a class="btn btn-outline" href="https://www.linkedin.com/in/rafaelverapinto/" role="button">
+                  <i class="fab fa-2x fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="ms-3">
+                <a class="btn btn-outline" href="https://github.com/rvera-p" role="button">
+                  <i class="fab fa-2x fa-github"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-6" style="height:500px">
+            <div id="map" class="h-100 w-100"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center align-items-center" id="location">
+            <i class="fas fa-location-dot fa-2x"></i>
+            <h4 class="mx-2 pt-2">Melipilla, Chile</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="align-items-center h-100">
+      <ul class="nav justify-content-center border-bottom border-white py-3">
+        <li class="ms-3">
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/rafaelverapinto/" role="button">
+            <i class="fab fa-2x fa-linkedin"></i>
+          </a>
+        </li>
+        <li class="ms-3">
+          <a class="btn btn-outline" href="https://github.com/rvera-p" role="button">
+            <i class="fab fa-2x fa-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-center mt-4">&copy; 2024 Rafael Vera.</p>
+    </div>
+  </footer>
+
+</body>
+
 </html>
