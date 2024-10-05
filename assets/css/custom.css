@@ -1,0 +1,58 @@
+:root {
+    --bd-light-1: #F8FAFC;
+    --bd-light-2: #3398db;
+    --bd-light-3: #2b3d4f;
+    --txt-light-1: #1F2937;
+    --txt-light-2: #000000;
+    --link-light: #1E3A8A;
+    --link-hover-light: #1E3A8A;
+    --btn-light: #3B82F6;
+    --btn-hover-light: #1E40AF;
+}
+
+/* Estilos para el modo claro */
+[data-bs-theme="light"] body {
+    background-color: var(--background-light);
+    color: var(--text-light-1);
+}
+
+[data-bs-theme="light"] .navbar-nav .nav-link {
+    color: var(--link-light);
+}
+
+[data-bs-theme="light"] .navbar-nav .nav-link:hover {
+    color: var(--text-link-light);
+}
+
+[data-bs-theme="light"] .navbar-toggler {
+    border-color: #444;
+}
+
+
+
+/* Estilos para el modo oscuro */
+[data-bs-theme="dark"] body {
+    background-color: #333333;
+    /* Fondo del navbar */
+    color: #ffffff;
+    /* Color del texto del navbar */
+}
+
+[data-bs-theme="dark"] .navbar-nav .nav-link {
+    color: white;
+    /* Color del texto de los enlaces */
+}
+
+[data-bs-theme="dark"] .navbar-nav .nav-link:hover {
+    color: #bb86fc;
+    /* Color de los enlaces al pasar el ratón */
+}
+
+[data-bs-theme="dark"] .navbar-toggler {
+    border-color: #444;
+    /* Color del borde del botón de toggle */
+}
+
+[data-bs-theme="dark"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' fill='white'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

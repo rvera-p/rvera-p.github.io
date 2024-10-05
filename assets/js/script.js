@@ -1,38 +1,83 @@
-// Animaciones de las habilidades
-function efectoHabilidades() {
-  var skills = document.getElementById("skills");
-  var distancia_skills =
-    window.innerHeight - skills.getBoundingClientRect().top;
-  if (distancia_skills >= 300) {
-    let habilidades = document.getElementsByClassName("progreso");
-    habilidades[0].classList.add("javascript");
-    habilidades[1].classList.add("htmlcss");
-    habilidades[2].classList.add("java");
-    habilidades[3].classList.add("python");
-    habilidades[4].classList.add("vba");
-    habilidades[5].classList.add("c");
-    habilidades[6].classList.add("mysql");
-    habilidades[7].classList.add("sqlserver");
-    habilidades[8].classList.add("oracle");
-    habilidades[9].classList.add("mongodb");
-    habilidades[10].classList.add("postgresql");
-    habilidades[11].classList.add("git");
-    habilidades[12].classList.add("aws");
-    habilidades[13].classList.add("docker");
-    habilidades[14].classList.add("nodejs");
-    habilidades[15].classList.add("bootstrap");
-    habilidades[16].classList.add("español");
-    habilidades[17].classList.add("ingles");
-  }
-}
-
-window.onscroll = function () {
-  efectoHabilidades();
-};
-
-/* BTN INICIO */
 $(document).ready(function () {
-  $("#s-icons").click(function () {
-    $("html, body").animate({ scrollTop: 0 });
-  });
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) { // Cambia el número según tus necesidades
+            $('#navbar').addClass('scrolled');
+        } else {
+            $('#navbar').removeClass('scrolled');
+        }
+    });
+
+    /* CURSOS */
+    $('#carouselCursos').carousel({
+        interval: 6000
+    })
+
+    $.getJSON('../../data.json', function (data) {
+        var courses = data.cursos;
+        var coursesContainer = $('#courses-container');
+        var carouselInner = '';
+        var rowCounter = 0;
+
+        courses.forEach(function (course, index) {
+            var isActive = (index === 0) ? 'active' : '';
+
+            if (index % 4 === 0) {
+                rowCounter++;
+                carouselInner += `<div class="carousel-item ${isActive}">
+                                    <div class="row">`;
+            }
+
+            var cardHtml = `<div class="col-sm-3">
+                              <div class="card shadow">
+                                <div class="card-header text-center py-3">
+                                    <h5 class="card-title">${course.nombre}</h5>
+                                    <h6>${course.entidad}</h6>
+                                </div>
+                                <div class="card-body">
+                                  <div class="d-flex flex-wrap gap-2 justify-content-center py-3">`;
+
+            course.temas.forEach(function (tema) {
+                cardHtml += `<span class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">${tema}</span>`;
+            });
+
+            cardHtml += `       </div>
+                              </div>
+                            </div>
+                          </div>`;
+
+            carouselInner += cardHtml;
+
+            if ((index + 1) % 4 === 0 || (index + 1) === courses.length) {
+                carouselInner += `</div></div>`;
+            }
+        });
+        coursesContainer.html(carouselInner);
+    });
+
+    /* PORTAFOLIO */
+    $.getJSON('../../data.json', function (data) {
+        var portfolio = data.portafolio;
+        var portfolioContainer = $('#portfolio-container');
+        var cardHtml = '';
+        portfolio.forEach(function (project) {
+            cardHtml += `<div class="col my-2">
+                            <a href="${project.link}" class="card card-just-text shadow rounded-0 text-decoration-none position-relative">
+                                <div class="card-body text-center p-5">
+                                <h6 clas="mb-2">${project.nombre}</h6>
+                                <p>${project.descripcion}</p>
+                                </div>
+                            </a>
+                         </div>`;
+
+        });
+        portfolioContainer.html(cardHtml);
+    });
+
+    /* MAP */
+    var map = L.map('map').setView([-33.6895207, -71.2193217], 13);
+
+    // Agrega la capa de mosaicos
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 });
