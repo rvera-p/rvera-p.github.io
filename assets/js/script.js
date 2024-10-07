@@ -8,54 +8,56 @@ $(document).ready(function () {
     });
 
     /* CURSOS */
-    $('#carouselCursos').carousel({
-        interval: 6000
-    })
+    function moveCarousel(direction, cards) {
+        let $carouselContainer = $('.carousel-inner');
+        let $carouselItems = $('.carousel-item');
+        let itemWidth = $carouselItems.outerWidth(true);
+        let activeIndex = $carouselItems.index($carouselContainer.find('.active'));
+        let nextIndex;
 
-    $.getJSON('../../data.json', function (data) {
-        var courses = data.cursos;
-        var coursesContainer = $('#courses-container');
-        var carouselInner = '';
-        var rowCounter = 0;
+        if (direction === 'next') {
+            nextIndex = (activeIndex + 1) % ($carouselItems.length - (cards - 1));
+        } else {
+            nextIndex = (activeIndex - (cards) + $carouselItems.length) % ($carouselItems.length - 2);
+        }
 
-        courses.forEach(function (course, index) {
-            var isActive = (index === 0) ? 'active' : '';
+        let scrollPosition = nextIndex * itemWidth;
+        $carouselContainer.animate({ scrollLeft: scrollPosition }, 600);
 
-            if (index % 4 === 0) {
-                rowCounter++;
-                carouselInner += `<div class="carousel-item ${isActive}">
-                                    <div class="row">`;
-            }
 
-            var cardHtml = `<div class="col-sm-3">
-                              <div class="card shadow">
-                                <div class="card-header text-center py-3">
-                                    <h5 class="card-title">${course.nombre}</h5>
-                                    <h6>${course.entidad}</h6>
-                                </div>
-                                <div class="card-body">
-                                  <div class="d-flex flex-wrap gap-2 justify-content-center py-3">`;
+        $carouselContainer.find('.active').removeClass('active');
+        $carouselItems.eq(nextIndex).addClass('active');
+    }
 
-            course.temas.forEach(function (tema) {
-                cardHtml += `<span class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">${tema}</span>`;
-            });
+    const mediaQueryMd = window.matchMedia("(min-width: 960px)");
+    const mediaQueryLg = window.matchMedia("(min-width: 1200px)");
 
-            cardHtml += `       </div>
-                              </div>
-                            </div>
-                          </div>`;
+    function setupCarouselHandlers() {
+        let cards = 1;
 
-            carouselInner += cardHtml;
+        if (mediaQueryMd.matches) {
+            cards = 3;
+        }
+        if (mediaQueryLg.matches) {
+            cards = 4;
+        }
 
-            if ((index + 1) % 4 === 0 || (index + 1) === courses.length) {
-                carouselInner += `</div></div>`;
-            }
+        $('#carousel-left').off('click').on('click', function () {
+            moveCarousel('prev', cards);
         });
-        coursesContainer.html(carouselInner);
-    });
+
+        $('#carousel-right').off('click').on('click', function () {
+            moveCarousel('next', cards);
+        });
+    }
+    setupCarouselHandlers();
+
+    mediaQueryMd.addEventListener('change', setupCarouselHandlers);
+    mediaQueryLg.addEventListener('change', setupCarouselHandlers);
+
 
     /* PORTAFOLIO */
-    $.getJSON('../../data.json', function (data) {
+    /* $.getJSON('../../data.json', function (data) {
         var portfolio = data.portafolio;
         var portfolioContainer = $('#portfolio-container');
         var cardHtml = '';
@@ -71,7 +73,7 @@ $(document).ready(function () {
 
         });
         portfolioContainer.html(cardHtml);
-    });
+    }); */
 
     /* MAP */
     var map = L.map('map').setView([-33.6895207, -71.2193217], 13);
@@ -81,3 +83,24 @@ $(document).ready(function () {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 });
+
+
+
+/* if (window.matchMedia("(min-width: 960px)").matches) {
+    let carouselWidth = $('#courses-container')[0].scrolWidth;
+    let cardWidth = $('.carousel-item').width();
+    let scrollPosition = 0;
+
+    $('#carousel-left').on('click', () => {
+        scrollPosition = scrollPosition + cardWidth;
+        $('.carousel-inner').animate({ scrollLeft: scrollPosition }, 600);
+    });
+    $('#carousel-right').on('click', () => {
+        scrollPosition = scrollPosition - cardWidth;
+        $('.carousel-inner').animate({ scrollLeft: scrollPosition }, 600);
+    });
+
+}; */
+
+
+
