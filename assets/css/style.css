@@ -14,46 +14,39 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   transition: background 0.5s ease;
+  overflow-x: hidden;
 }
 
 p {
-  font-weight: 400;
-  /* Regular */
+  font-weight: 2.5rem;
 }
 
 b {
-  font-weight: 700;
-  /* Bold */
+  font-weight: 5rem;
 }
 
 h1 {
-  font-weight: 700;
-  /* Bold para destacar el título principal */
+  font-weight: 5rem;
 }
 
 h2 {
-  font-weight: 600;
-  /* Semi-bold para subtítulos importantes */
+  font-weight: 4.5rem;
 }
 
 h3 {
-  font-weight: 600;
-  /* Semi-bold para mantener consistencia con h2 */
+  font-weight: 4rem;
 }
 
 h4 {
-  font-weight: 500;
-  /* Medium para títulos secundarios */
+  font-weight: 3.5rem;
 }
 
 h5 {
-  font-weight: 500;
-  /* Medium para mantener jerarquía visual */
+  font-weight: 3rem;
 }
 
 h6 {
-  font-weight: 400;
-  /* Regular para el título menos destacado */
+  font-weight: 2.5rem;
 }
 
 /* THEME BUTTON */
@@ -96,7 +89,7 @@ h6 {
 }
 
 /* BANNER */
-.banner-portada {
+#banner-portada {
   background-color: white;
   height: 3em;
 }
@@ -104,25 +97,68 @@ h6 {
 .banner-black {
   background-color: #333333;
   height: 6rem;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
-.banner-blue {
-  background-color: #0E2C4C;
-  height: 6rem;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
 }
 
 /* PORTADA */
 #portada {
   height: 95vh;
-  background-image: url(../img/front_page.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+}
+
+.typing {
+  max-width: var(--typing-width);
+  animation: typing var(--typing-time) steps(var(--typing-steps)) forwards, blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+}
+
+.stop-animation {
+  animation: none;
+  border-right: none;
+}
+
+@media (max-width: 576px) {
+
+  .typing {
+    white-space: normal;
+    max-width: 100%;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: var(--typing-width);
+  }
+}
+
+@keyframes blink {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: white;
+  }
 }
 
 /* SOBRE MI */
@@ -133,13 +169,13 @@ h6 {
 
 /* SKILLS */
 #skills {
-  margin-top: 15%;
-  margin-bottom: 15%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 /* EXPERIENCIA */
 #experiencia {
-  margin-top: 15%;
+  margin-top: 5%;
   margin-bottom: 5%;
 }
 
@@ -178,18 +214,15 @@ ul.timeline>li:before {
 }
 
 /* CURSOS */
-#carouselCursos {
-  margin-top: 5%;
-  margin-bottom: 20%;
+#cursos {
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 #courses-container {
   display: flex;
-  /* Flexbox para alinear los ítems */
   overflow: hidden;
-  /* Oculta el desbordamiento */
   scroll-behavior: smooth;
-  /* Suaviza el scroll */
 }
 
 #courses-container .card {
@@ -198,11 +231,12 @@ ul.timeline>li:before {
   margin: 0 .5em;
 }
 
-@media (min-width: 960px) {
-  /* #courses-container {
-    display: flex;
-  } */
+#courses-container .card .card-header {
+  height: 45%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
+@media (min-width: 960px) {
   .carousel-item {
     display: block;
     margin-right: 0;
@@ -231,16 +265,34 @@ ul.timeline>li:before {
   opacity: 0.8;
 }
 
-.card[data-color="blue"] {
-  color: #7a9e9f;
+.card[data-color="Cream Brulee"] {
+  background: #ffdd9e;
+}
+
+.card[data-color="Portafino"] {
+  background: #fff8ad;
+}
+
+.card[data-color="Fringy Flower"] {
+  background: #c0e7cb;
+}
+
+.card[data-color="Shadow Green"] {
+  background: #a1c9c6;
+}
+
+#portfolio-container .card h6 {
+  font-weight: bold;
+}
+
+#portfolio-container .card p {
+  text-overflow: ellipsis;
 }
 
 /* CONTACTO */
 #contacto {
   margin-bottom: 15%;
 }
-
-
 
 #location {
   background-color: rgba(157, 182, 201, 0.3);
@@ -250,6 +302,24 @@ ul.timeline>li:before {
 
 /* FOOTER */
 #footer {
-  height: 150px;
-  background-color: rgba(157, 182, 201, 0.8);
+  background-color: #bcbdbd;
+  color: black;
+}
+
+#footer .nav-link {
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+#footer .nav-link:hover {
+  color: white;
+}
+
+#social-media {
+  background-color: #8f8f8f;
+}
+
+#copyright {
+  background-color: #606060;
+  color: white;
 }

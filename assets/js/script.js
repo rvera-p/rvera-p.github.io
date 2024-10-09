@@ -7,6 +7,37 @@ $(document).ready(function () {
         }
     });
 
+    /* PORTADA */
+    function efectoTypeWriter(element, text, time, waitTime) {
+        const steps = text.length;
+
+        setTimeout(() => {
+            // Establece el número de pasos para la animación de typing
+            $(element).css('--typing-steps', steps);
+            $(element).css('--typing-time', time + 's');
+
+            for (let i = 0; i <= steps; i++) {
+                setTimeout(() => {
+                    $(element).text(text.substring(0, i));
+
+                    // Establece el ancho del texto como variable CSS en 'ch'
+                    const textWidth = text.length; // Usando la longitud del texto
+                    $(element).css('--typing-width', textWidth + 'ch');
+
+                    // Detiene la animación si se ha escrito el texto completo
+                    if (i === steps && element !== '#portada p') {
+                        $(element).addClass('stop-animation');
+                    }
+                }, 100 * i); // Un retardo fijo para la escritura
+            }
+        }, waitTime);
+    }
+
+    efectoTypeWriter('#portada h2', 'Hola, mi nombre es  ', 2, 500);
+    efectoTypeWriter('#portada h1', 'Rafael Vera', 1, 2500);
+    efectoTypeWriter('#portada p', 'Analista Programador | Backend Developer ', 4, 3500);
+
+
     /* CURSOS */
     function moveCarousel(direction, cards) {
         let $carouselContainer = $('.carousel-inner');
@@ -57,23 +88,18 @@ $(document).ready(function () {
 
 
     /* PORTAFOLIO */
-    /* $.getJSON('../../data.json', function (data) {
-        var portfolio = data.portafolio;
-        var portfolioContainer = $('#portfolio-container');
-        var cardHtml = '';
-        portfolio.forEach(function (project) {
-            cardHtml += `<div class="col my-2">
-                            <a href="${project.link}" class="card card-just-text shadow rounded-0 text-decoration-none position-relative">
-                                <div class="card-body text-center p-5">
-                                <h6 clas="mb-2">${project.nombre}</h6>
-                                <p>${project.descripcion}</p>
-                                </div>
-                            </a>
-                         </div>`;
+    let colors = ['Cream Brulee', 'Portafino', 'Fringy Flower', 'Shadow Green'];
 
-        });
-        portfolioContainer.html(cardHtml);
-    }); */
+    function getRandomColor() {
+        let randomIndex = Math.floor(Math.random() * colors.length);
+        return colors[randomIndex];
+    }
+
+    $('#portfolio-container .card').each(function () {
+        let randomColor = getRandomColor();
+
+        $(this).attr('data-color', randomColor);
+    });
 
     /* MAP */
     var map = L.map('map').setView([-33.6895207, -71.2193217], 13);
@@ -83,24 +109,4 @@ $(document).ready(function () {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 });
-
-
-
-/* if (window.matchMedia("(min-width: 960px)").matches) {
-    let carouselWidth = $('#courses-container')[0].scrolWidth;
-    let cardWidth = $('.carousel-item').width();
-    let scrollPosition = 0;
-
-    $('#carousel-left').on('click', () => {
-        scrollPosition = scrollPosition + cardWidth;
-        $('.carousel-inner').animate({ scrollLeft: scrollPosition }, 600);
-    });
-    $('#carousel-right').on('click', () => {
-        scrollPosition = scrollPosition - cardWidth;
-        $('.carousel-inner').animate({ scrollLeft: scrollPosition }, 600);
-    });
-
-}; */
-
-
 
