@@ -125,16 +125,16 @@
   <main>
     <!-- PORTADA -->
     <div class="px-4 py-5" id="portada">
-      <div class="row flex-lg-row align-items-center p-5">
-        <div class="col-12 mt-5 ms-md-5 text-md-start text-center">
-          <h2>Hola, mi nombre es</h2>
-          <h1>Rafael Vera</h1>
-          <p>Analista Programador | Backend Developer</p>
+      <div class="row justify-content-center align-items-center p-5">
+        <div class="col-12 mt-5 text-md-start">
+          <h2 class="typing"></h2>
+          <h1 class="typing"></h1>
+          <p class="typing"></p>
         </div>
       </div>
     </div>
 
-    <div class="border-black border-bottom banner-portada mb-5">
+    <div class="mb-5" id="banner-portada">
       <div class="d-flex justify-content-center">
         <a class="text-black" href="#sobreMi"><i class="fas fa-chevron-down fa-3x"></i></a>
       </div>
@@ -143,8 +143,8 @@
     <!-- SOBRE MI -->
     <div class="container p-5 d-flex align-items-center">
       <div class="row" id="sobreMi">
-        <div class="col-12 col-lg-6 col-md-6 py-5">
-          <h2>Mi Historia</h2>
+        <div class="col-12 col-xl-6 py-5">
+          <h2 class="text-center mb-3">Mi Historia</h2>
           <p>
             Mi nombre es Rafael Vera, soy un Analista Programador con un profundo interés en el mundo digital.
             <br><br>
@@ -162,18 +162,16 @@
             estado.
           </p>
         </div>
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-xl-6">
           <img src="assets/img/sobremi.svg" alt="Sobre Mi">
         </div>
         <div class="col-6"></div>
       </div>
     </div>
 
-    <div class="banner-black"></div>
-
     <!-- SKILLS -->
-    <div class="container">
-      <div id="skills">
+    <div class="py-5" id="skills">
+      <div class="container py-5 my-5">
         <div class="mb-3">
           <h2 class="text-center mb-5">Mis Habilidades</h2>
           <p>Durante mi trayectoria en el área de la informática, he desarrollado una variedad de
@@ -272,7 +270,6 @@
 
     </div>
 
-    <div class="banner-blue"></div>
 
     <!-- EXPERIENCIA -->
     <div class="container">
@@ -311,36 +308,154 @@
     </div>
 
     <!-- CURSOS -->
-    <div class="container">
-      <div id="cursos">
+    <div id="cursos">
+      <div class="container">
         <h2 class="text-center mb-5">Cursos en los que he participado</h2>
-        <div id="carouselCursos" class="carousel slide mb-6" data-bs-ride="carousel">
+        <div id="carouselCursos" class="carousel slide mb-6">
           <div class="row align-items-center">
             <div class="col-1">
-              <button class="btn p-0 border-0" type="button" data-bs-target="#carouselCursos" data-bs-slide="prev">
-                <span class="fas fa-2x fa-chevron-left text-primary" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
+              <i class="fas fa-2x fa-chevron-left text-primary" id="carousel-left"></i>
             </div>
 
-            <div class="col-10">
+            <div class="col-10 p-4">
               <div class="carousel-inner" id="courses-container">
+
+                <!-- Item -->
+                <div class="carousel-item active">
+                  <div class="card shadow">
+                    <div class="card-header text-center py-3">
+                      <h5 class="card-title">Desarrollo de Aplicaciones Full Stack JavaScript Trainee</h5>
+                      <h6>Edutecno (SENCE)</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex flex-wrap gap-2 justify-content-center py-3">
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Node</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">PostgreSQL</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">JavaScript</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">HTML5</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">CSS</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Bootstrap</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">JQuery</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">GIT</span>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item -->
+                <div class="carousel-item">
+                  <div class="card shadow">
+                    <div class="card-header text-center py-3">
+                      <h5 class="card-title">AWS: Foundational Level</h5>
+                      <h6>ARKHO</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex flex-wrap gap-2 justify-content-center py-3">
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Fundamentos
+                          AWS</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Seguridad</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Arquitectura</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Optimización
+                          de recursos</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item -->
+                <div class="carousel-item">
+                  <div class="card shadow">
+                    <div class="card-header text-center py-3">
+                      <h5 class="card-title">AWS re/Start</h5>
+                      <h6>CodingDojo</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex flex-wrap gap-2 justify-content-center py-3">
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Fundamentos
+                          IT</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Networking</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Seguridad</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Linux</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Database</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Python</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item -->
+                <div class="carousel-item">
+                  <div class="card shadow">
+                    <div class="card-header text-center py-3">
+                      <h5 class="card-title">Tu Futuro</h5>
+                      <h6>Fundación Forge</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex flex-wrap gap-2 justify-content-center py-3">
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Competencias
+                          laborales</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Soft
+                          Skills</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item -->
+                <div class="carousel-item ">
+                  <div class="card shadow">
+                    <div class="card-header text-center py-3">
+                      <h5 class="card-title">Gestión de Proyectos con Metodologías Ágiles</h5>
+                      <h6>SENCE</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex flex-wrap gap-2 justify-content-center py-3">
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Fundamentos</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Roles</span>
+                        <span
+                          class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Planificación</span>
+                        <span class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis
+                        rounded-pill">Ciclos de desarrollo</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
               </div>
             </div>
 
             <div class="col-1">
-              <button class="btn p-0 border-0" type="button" data-bs-target="#carouselCursos" data-bs-slide="next">
-                <span class="fas fa-2x fa-chevron-right text-primary" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+              <i class="fas fa-2x fa-chevron-right text-primary" id="carousel-right"></i>
             </div>
           </div>
 
         </div>
       </div>
-    </div>
 
+    </div>
     <div class="banner-black"></div>
 
     <!-- PORTAFOLIO -->
@@ -348,17 +463,67 @@
       <div id="portafolio">
         <h2 class="text-center my-3">Portafolio</h2>
 
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 align-items-stretch" id="portfolio-container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 align-items-stretch"
+          id="portfolio-container">
+
+          <!-- CARD -->
           <div class="col my-2">
-            <a href="" class="card card-just-text shadow rounded-0 text-decoration-none position-relative">
+            <a href="https://github.com/rvera-p/p2_api_digimon"
+              class="card card-just-text shadow rounded-0 text-decoration-none position-relative">
               <div class="card-body text-center p-5">
-                <h6>Título de la Card</h6>
-                <p>Descripción de la Card</p>
+                <h6 class="title mb-2">API Digimon</h6>
+                <p class="description">Aplicación frontend que consume una API pública de Digimon para mostrar detalles
+                  de los personajes.</p>
               </div>
             </a>
           </div>
 
+          <!-- CARD -->
+          <div class="col my-2">
+            <a href="https://github.com/rvera-p/task-tracker"
+              class="card card-just-text shadow rounded-0 text-decoration-none position-relative">
+              <div class="card-body text-center p-5">
+                <h6 class="title mb-2">Task Tracker CLI</h6>
+                <p class="description">Aplicación de consola para gestionar tareas usando Python.</p>
+              </div>
+            </a>
+          </div>
 
+          <!-- CARD -->
+          <div class="col my-2">
+            <a href="https://github.com/rvera-p/github-user-activity-cli"
+              class="card card-just-text shadow rounded-0 text-decoration-none position-relative">
+              <div class="card-body text-center p-5">
+                <h6 class="title mb-2">GitHub User Activity CLI</h6>
+                <p class="description">Un programa de consola que realiza solicitudes a la API de GitHub para obtener y
+                  mostrar la actividad reciente de un usuario.</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- CARD -->
+          <div class="col my-2">
+            <a href="https://github.com/rvera-p/p3_bootcampApp"
+              class="card card-just-text shadow rounded-0 text-decoration-none position-relative">
+              <div class="card-body text-center p-5">
+                <h6 class="title mb-2">Bootcamp App</h6>
+                <p class="description">Aplicación web creada para gestionar el inicio de sesión de usuarios en un
+                  entorno de aprendizaje tipo bootcamp.</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- CARD -->
+          <div class="col my-2">
+            <a href="https://github.com/rvera-p/p1_presupuesto"
+              class="card card-just-text shadow rounded-0 text-decoration-none position-relative">
+              <div class="card-body text-center p-5">
+                <h6 class="title mb-2">Presupuesto App</h6>
+                <p class="description">Una aplicación web sencilla que permite a los usuarios gestionar su presupuesto
+                  de manera eficiente.</p>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -367,14 +532,16 @@
     <div class="container d-flex justify-content-center">
       <div class="col-12 col-lg-10" id="contacto">
         <div class="row align-items-center rounded-3 border shadow-lg">
-          <div class="col-lg-6 p-3">
-            <h2>Contacto</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus, explicabo sint nostrum
-              dolorum
-              consectetur? Facilis officia consequatur, suscipit aperiam doloribus ut quaerat! Praesentium explicabo,
-              accusantium culpa error natus at.</p>
+          <div class="col-12 col-lg-6 p-3 py-5">
+            <h2 class="text-center mb-4">Contáctame</h2>
+            <p>Si tienes alguna pregunta, proyecto o simplemente deseas saludar, no dudes en ponerte en contacto
+              conmigo. Estoy disponible para colaborar en proyectos de desarrollo web y análisis de datos.</p>
+            <p>Puedes comunicarte conmigo a través de mi email <a
+                href="mailto:rafael.tuemail@gmail.com">rafael.verapinto@gmail.com</a></p>
+            <p>También puedes encontrarme en <a href="https://www.linkedin.com/in/rafaelverapinto/">LinkedIn</a> o <a
+                href="https://github.com/rvera-p">GitHub</a>.</p>
 
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <ul class="nav justify-content-center border-top mt-5">
               <li class="ms-3">
                 <a class="btn btn-outline" href="https://www.linkedin.com/in/rafaelverapinto/" role="button">
                   <i class="fab fa-2x fa-linkedin"></i>
@@ -405,9 +572,53 @@
   </main>
 
   <!-- FOOTER -->
-  <footer id="footer">
-    <div class="align-items-center h-100">
-      <ul class="nav justify-content-center border-bottom border-white py-3">
+  <footer class="" id="footer">
+    <div class="container py-3">
+      <div class="row">
+        <div class="col-12 col-lg-4 py-3 d-lg-flex justify-content-lg-start">
+          <div>
+            <h5 class="text-center mb-2">Sobre mi</h5>
+            <p>Soy Rafael Vera, Backend Developer con pasión por el mundo digital.</p>
+            <p>A lo largo de mi carrera, he desarrollado una sólida capacidad para adaptarme a entornos cambiantes y
+              enfrentar desafíos tecnológicos con creatividad.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-7 offset-lg-1 py-3 ">
+          <div class="row d-lg-flex justify-content-lg-end">
+
+            <div class="col-7 col-md-5">
+              <h6>ULTIMOS PROYECTOS</h6>
+              <ul class="nav d-block">
+                <li class="nav-item mb-1"><a href="https://github.com/rvera-p/task-tracker" class="nav-link p-0 ">Task
+                    Tracker CLI</a></li>
+                <li class="nav-item mb-1"><a href="https://github.com/rvera-p/github-user-activity-cli"
+                    class="nav-link p-0 ">GitHub User Activity CLI</a></li>
+                <li class="nav-item mb-1"><a href="https://github.com/rvera-p/p3_bootcampApp"
+                    class="nav-link p-0 ">Bootcamp App</a></li>
+                <li class="nav-item mb-1"><a href="https://github.com/rvera-p/p2_api_digimon" class="nav-link p-0 ">API
+                    Digimon</a></li>
+                <li class="nav-item mb-1"><a href="https://github.com/rvera-p/p1_presupuesto"
+                    class="nav-link p-0 ">Presupuesto App</a></li>
+              </ul>
+            </div>
+
+            <div class="col-4 col-md-3">
+              <h6>RAVADEV</h6>
+              <ul class="nav d-block">
+                <li class="nav-item mb-1"><a href="#" class="nav-link p-0 ">SOBRE MI</a></li>
+                <li class="nav-item mb-1"><a href="#" class="nav-link p-0 ">PORTAFOLIO</a></li>
+                <li class="nav-item mb-1"><a href="#" class="nav-link p-0 ">CONTACTO</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="align-items-center py-3" id="social-media">
+      <ul class="nav justify-content-center py-3">
         <li class="ms-3">
           <a class="btn btn-outline" href="https://www.linkedin.com/in/rafaelverapinto/" role="button">
             <i class="fab fa-2x fa-linkedin"></i>
@@ -419,7 +630,10 @@
           </a>
         </li>
       </ul>
-      <p class="text-center mt-4">&copy; 2024 Rafael Vera.</p>
+    </div>
+
+    <div class="text-center py-3" id="copyright">
+      <p>&copy; 2024 Rafael Vera.</p>
     </div>
   </footer>
 
