@@ -66,6 +66,10 @@ h6 {
   --bs-btn-active-border-color: var(--btn-hover-light);
 }
 
+.bd-mode-toggle {
+  z-index: 1050;
+}
+
 /* NAVBAR */
 #navbar {
   transition: background-color 0.3s, padding 0.3s;
@@ -88,9 +92,14 @@ h6 {
   color: black;
 }
 
+.navbar-toggler-icon {
+  background-color: inherit;
+}
+
 /* BANNER */
 #banner-portada {
   background-color: white;
+  border-bottom: 1px solid black;
   height: 3em;
 }
 
@@ -227,12 +236,12 @@ ul.timeline>li:before {
 
 #courses-container .card {
   height: 350px;
-  background-color: #f8f9fa;
+  background-color: transparent;
   margin: 0 .5em;
 }
 
 #courses-container .card .card-header {
-  height: 45%;
+  height: 50%;
   background-color: rgba(255, 255, 255, 0.1);
 }
 

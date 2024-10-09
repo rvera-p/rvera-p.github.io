@@ -4,9 +4,9 @@
     --bd-light-3: #1F2937;
     --link-light: #1E3A8A;
     --bd-dark-1: #333333;
-    --bd-dark-2: #005994;
-    --bd-dark-3: #1F2937;
-    --link-dark: #1E3A8A;
+    --bd-dark-2: #3d3d3d;
+    --bd-dark-3: #1a1a1a;
+    --link-dark: #00bcd4;
 }
 
 /* Estilos para el modo claro */
@@ -15,16 +15,8 @@
     color: var(--text-light-1);
 }
 
-[data-bs-theme="light"] .navbar-nav .nav-link {
+[data-bs-theme="light"] #navbarSupportedContent .nav-link:hover {
     color: var(--link-light);
-}
-
-[data-bs-theme="light"] .navbar-nav .nav-link:hover {
-    color: var(--text-link-light);
-}
-
-[data-bs-theme="light"] .navbar-toggler {
-    border-color: #444;
 }
 
 [data-bs-theme="light"] #portada {
@@ -53,28 +45,27 @@
 /* Estilos para el modo oscuro */
 [data-bs-theme="dark"] body {
     background-color: var(--bd-dark-1);
-    /* Fondo del navbar */
     color: #ffffff;
-    /* Color del texto del navbar */
 }
 
-[data-bs-theme="dark"] .navbar-nav .nav-link {
+[data-bs-theme="dark"] #navbar {
+    background-color: var(--bd-dark-1);
+}
+
+[data-bs-theme="dark"] #navbar a {
     color: white;
-    /* Color del texto de los enlaces */
 }
 
-[data-bs-theme="dark"] .navbar-nav .nav-link:hover {
-    color: #bb86fc;
-    /* Color de los enlaces al pasar el ratón */
+[data-bs-theme="dark"] #navbarSupportedContent .nav-link:hover {
+    color: var(--link-dark);
 }
 
 [data-bs-theme="dark"] .navbar-toggler {
     border-color: #444;
-    /* Color del borde del botón de toggle */
 }
 
 [data-bs-theme="dark"] .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' fill='white'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' fill='black'%3E%3Cpath stroke='black' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 [data-bs-theme="dark"] #portada {
@@ -83,5 +74,26 @@
 
 [data-bs-theme="dark"] #banner-portada {
     background-color: var(--bd-dark-1);
+    border-bottom: 1px solid white;
+}
+
+[data-bs-theme="dark"] #banner-portada .fas {
     color: white;
+}
+
+[data-bs-theme="dark"] #skills {
+    background-color: var(--bd-dark-2);
+    color: white
+}
+
+[data-bs-theme="dark"] #cursos {
+    background-color: #262626;
+}
+
+[data-bs-theme="dark"] .banner-black {
+    background-color: var(--bd-dark-3);
+}
+
+[data-bs-theme="dark"] #portafolio .card {
+    color: black;
 }
